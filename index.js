@@ -13,3 +13,21 @@ I need this code, but don't know where, perhaps should make some middleware, don
 Go code!
 */
 const express=require("express")
+const projectRouter=require("./projects/projectRouter")
+const actionRouter=require("./actions/actionRouter")
+const logger=require("./middleware/logger")
+const WelcomeRouter=require("./welcome/welcome")
+const server=express()
+const port=4000
+
+server.use(express.json())
+server.use(logger())
+server.use(WelcomeRouter)
+ server.use(projectRouter)
+//server.use(actionRouter)
+
+
+server.listen(port,()=>{
+    console.log(`server running at http://localhost:${port}`)
+})
+
