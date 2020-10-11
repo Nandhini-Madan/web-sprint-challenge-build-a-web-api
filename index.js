@@ -24,7 +24,7 @@ server.use(express.json())
 server.use(logger())
 server.use(WelcomeRouter)
  server.use(projectRouter)
-//server.use(actionRouter)
+server.use(actionRouter)
 
 
 server.listen(port,()=>{
