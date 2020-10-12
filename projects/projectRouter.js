@@ -13,9 +13,7 @@ router.get('/:id',validateID(),(req,res)=>{
 
 router.post("/project",validatedata(),(req,res,next)=>{
     console.log("Insert data in projects")
-    const name=req.body.name
-    const description=req.body
-  //  console.log(data,"hjkk")
+  
     projectdb.insert(req.body)
     .then((post)=>{
         res.status(200).json(post)

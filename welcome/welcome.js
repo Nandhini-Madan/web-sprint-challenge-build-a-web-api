@@ -3,7 +3,7 @@ const router=express.Router()
 
 router.get("/",(req,res)=>{
     res.json({
-        message:"Welcome to our API"
+        message:`Welcome to our API ${process.env.COHORT}`
     })
 })
 module.exports=router
