@@ -18,7 +18,7 @@ const actionRouter=require("./actions/actionRouter")
 const logger=require("./middleware/logger")
 const WelcomeRouter=require("./welcome/welcome")
 const server=express()
-const port=4000
+const port=process.env.PORT || 4000
 
 server.use(express.json())
 server.use(logger())
